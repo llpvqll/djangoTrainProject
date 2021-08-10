@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 import csv
 
-URL = 'https://auto.ria.com/uk/newauto/marka-suzuki/'
+URL = input('Entry URL: ')
 
 HEADERS = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36',
            'accept': '*/*'}
@@ -47,7 +47,7 @@ def get_content(html):
 
 def save_file(items):
     with open('cars.csv', 'w', newline='', encoding='utf-8') as file:
-        writer = csv.writer(file, delimiter=';')
+        writer = csv.writer(file, delimiter='; ')
         writer.writerow(['Mark', 'URL', 'Price in $', 'Price in UAH', 'City'])
         for item in items:
             writer.writerow([item['title'], item['link'], item['usd_price'], item['uah_price'], item['city']])
