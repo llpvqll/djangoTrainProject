@@ -1,2 +1,8 @@
 .idea/
 __pycache__/
+../arcanoid/
+        ../gardenCalendar/
+        ../learning_kivy/
+        ../python_programs/
+        ../scrapingProject/
+        ../train_proj/
